@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ramen Yard Custom Styles */
+/* Minimal helpers for ramen palette when needed outside tailwind tokens */
+.bg-ramen-cream { background-color: #FFF3E0; }
+.bg-ramen-beige { background-color: #F7E7CE; }
+.text-ramen-red { color: #D7263D; }
+.text-ramen-dark { color: #0B0A0A; }
+.border-ramen-sesame { border-color: #D1C7B7; }
+.ring-ramen-gold { --tw-ring-color: #E0A106; }
+
+/* Bro-Ger theme: chalkboard charcoal background + neon orange */
+body {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  background-color: #141414;
+}
+
+/* Form fields inside the customer site (admin keeps its light styling) */
+.broger-chalkboard input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+.broger-chalkboard textarea,
+.broger-chalkboard select {
+  background-color: #282828;
+  color: #F2EEE8;
+}
+
+.broger-chalkboard input::placeholder,
+.broger-chalkboard textarea::placeholder {
+  color: #78716C;
+}
+
+.broger-chalkboard {
+  background-color: #141414;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(255, 255, 255, 0.04), transparent 55%),
+    radial-gradient(ellipse at 85% 80%, rgba(255, 255, 255, 0.03), transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(255, 138, 31, 0.03), transparent 70%);
+  background-attachment: fixed;
+  color-scheme: dark;
+}
+
+.neon-text {
+  color: #FF8A1F;
+  text-shadow: 0 0 6px rgba(255, 138, 31, 0.55), 0 0 18px rgba(255, 138, 31, 0.3);
+}
+
+.neon-ring {
+  box-shadow: 0 0 0 2px #FF8A1F, 0 0 16px rgba(255, 138, 31, 0.45);
+}
+
+/* Hide scrollbar for mobile nav */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Image loading optimization */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Preload critical images */
+.preload-image {
+  content: '';
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 1px;
+  height: 1px;
+}
